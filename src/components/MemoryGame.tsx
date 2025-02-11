@@ -2,6 +2,139 @@
 
 import { useState, useEffect } from "react";
 
+type Card = {
+  id: number;
+  emoji: string;
+  flipped: boolean;
+  matched: boolean;
+};
+
+const cardImages: string[] = ["❤️", "💌", "🍫", "🌹", "💖", "🎁"];
+
+const shuffleCards = (): Card[] => {
+  return [...cardImages, ...cardImages]
+    .sort(() => Math.random() - 0.5)
+    .map((emoji, index) => ({
+      id: index,
+      emoji: emoji,
+      flipped: false,
+      matched: false,
+    }));
+};
+
+export default function MemoryGame() {
+  const [cards, setCards] = useState<Card[]>(shuffleCards());
+  const [firstPick, setFirstPick] = useState<Card | null>(null);
+  const [secondPick, setSecondPick] = useState<Card | null>(null);
+  const [disabled, setDisabled] = useState<boolean>(false);
+  const [won, setWon] = useState<boolean>(false);
+  const [lost, setLost] = useState<boolean>(false);
+  const [timeLeft, setTimeLeft] = useState<number>(30);
+
+  useEffect(() => {
+    if (firstPick && secondPick) {
+      setDisabled(true);
+      if (firstPick.emoji === secondPick.emoji) {
+        setCards((prevCards) =>
+          prevCards.map((c) =>
+            c.emoji === firstPick.emoji ? { ...c, matched: true } : c
+          )
+        );
+        resetTurn();
+      } else {
+        setTimeout(() => resetTurn(), 1000);
+      }
+    }
+  }, [firstPick, secondPick]);
+
+  useEffect(() => {
+    if (cards.every((c) => c.matched)) {
+      setWon(true);
+    }
+  }, [cards]);
+
+  useEffect(() => {
+    if (timeLeft > 0 && !won) {
+      const timer = setInterval(() => {
+        setTimeLeft((prevTime) => prevTime - 1);
+      }, 1000);
+      return () => clearInterval(timer);
+    } else if (timeLeft === 0) {
+      setLost(true);
+    }
+  }, [timeLeft, won]);
+
+  const handleCardClick = (clickedCard: Card): void => {
+    if (!disabled && !clickedCard.flipped && !clickedCard.matched) {
+      setCards((prevCards) =>
+        prevCards.map((c) =>
+          c.id === clickedCard.id ? { ...c, flipped: true } : c
+        )
+      );
+
+      firstPick ? setSecondPick(clickedCard) : setFirstPick(clickedCard);
+    }
+  };
+
+  const resetTurn = (): void => {
+    setFirstPick(null);
+    setSecondPick(null);
+    setDisabled(false);
+    setCards((prevCards) =>
+      prevCards.map((c) => (c.matched ? c : { ...c, flipped: false }))
+    );
+  };
+
+  const restartGame = (): void => {
+    setCards(shuffleCards());
+    setWon(false);
+    setLost(false);
+    setTimeLeft(30);
+  };
+
+  return (
+    <div className="game-container">
+      <h2>Memory Match Game 💘</h2>
+      <p>⏳ Time Left: {timeLeft}s</p>
+
+      {won ? (
+        <div className="win-message">
+          <p>🎉 You won the game!</p>
+          <p>Don't worry, I'll take you out on the 14th of Feb for a date! 💖</p>
+        </div>
+      ) : lost ? (
+        <div className="lose-message">
+          <p>😢 Time's up! You lost!</p>
+          <p>But hey, I'll still take you out on the 14th of Feb for a date! 💞</p>
+        </div>
+      ) : (
+        <div className="game-board">
+          {cards.map((c) => (
+            <div
+              key={c.id}
+              className={`card ${c.flipped ? "flipped" : ""} ${
+                c.matched ? "matched" : ""
+              }`}
+              onClick={() => handleCardClick(c)}
+            >
+              {c.flipped || c.matched ? c.emoji : "❓"}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <button onClick={restartGame}>Restart Game 🔄</button>
+    </div>
+  );
+}
+
+
+
+/*
+"use client";
+
+import { useState, useEffect } from "react";
+
 const cardImages = ["❤️", "💌", "🍫", "🌹", "💖", "🎁"];
 
 // Define card structure type
@@ -108,3 +241,4 @@ export default function MemoryGame() {
     </div>
   );
 }
+*/

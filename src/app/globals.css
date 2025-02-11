@@ -1,13 +1,5 @@
-/* src/app/globals.css */
-body {
-    background-color: #ffecf2;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .game-container {
+/* Add this to globals.css */
+.game-container {
     margin-top: 50px;
   }
   
@@ -28,5 +20,20 @@ body {
   .card.matched {
     background-color: lightcoral;
     color: white;
+  }
+  
+  .win-message, .lose-message {
+    font-size: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .win-message {
+    background-color: #90EE90; /* Light green */
+  }
+  
+  .lose-message {
+    background-color: #FF6961; /* Light red */
   }
   
