@@ -1,21 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* src/app/globals.css */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+    background-color: #ffecf2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .game-container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    border: 2px solid pink;
+    background-color: white;
+    cursor: pointer;
+    margin: 5px;
+    line-height: 80px;
+    text-align: center;
+  }
+  
+  .card.flipped,
+  .card.matched {
+    background-color: lightcoral;
+    color: white;
+  }
+  
