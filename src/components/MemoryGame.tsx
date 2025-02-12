@@ -95,7 +95,7 @@ export default function MemoryGame() {
 
   return (
     <div className="game-container">
-      <h2>Memory Match Game 💘</h2>
+      <h2>Memory Match Game</h2>
       <div className="timer-container">
         <div className="timer-bar" style={{ width: `${(timeLeft / 30) * 100}%` }}></div>
         <div className="timer-text">{timeLeft}s</div>
@@ -130,7 +130,7 @@ export default function MemoryGame() {
 
       )}
 
-      <button onClick={restartGame}>Restart Game 🔄</button>
+      <button onClick={restartGame}>Restart Game</button>
     </div>
   );
 }
