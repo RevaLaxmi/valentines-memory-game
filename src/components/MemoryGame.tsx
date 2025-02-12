@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -95,7 +96,10 @@ export default function MemoryGame() {
   return (
     <div className="game-container">
       <h2>Memory Match Game 💘</h2>
-      <p>⏳ Time Left: {timeLeft}s</p>
+      <div className="timer-container">
+        <div className="timer-bar" style={{ width: `${(timeLeft / 30) * 100}%` }}></div>
+        <div className="timer-text">{timeLeft}s</div>
+      </div>
 
       {won ? (
         <div className="win-message">
@@ -109,25 +113,27 @@ export default function MemoryGame() {
         </div>
       ) : (
         <div className="game-board">
-          {cards.map((c) => (
-            <div
-              key={c.id}
-              className={`card ${c.flipped ? "flipped" : ""} ${
-                c.matched ? "matched" : ""
-              }`}
-              onClick={() => handleCardClick(c)}
-            >
-              {c.flipped || c.matched ? c.emoji : "❓"}
-            </div>
-          ))}
+            {cards.map((c) => (
+                <div
+                key={c.id}
+                className={`card ${c.flipped ? "flipped" : ""} ${c.matched ? "matched" : ""}`}
+                onClick={() => handleCardClick(c)}
+                >
+                {/* Back side (Hidden when flipped) */}
+                <div className="card-back">❓</div>  
+
+                {/* Front side (Shows emoji when flipped) */}
+                <div className="card-front">{c.emoji}</div>
+                </div>
+            ))}
         </div>
+
       )}
 
       <button onClick={restartGame}>Restart Game 🔄</button>
     </div>
   );
 }
-
 
 
 /*

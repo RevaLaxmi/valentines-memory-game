@@ -1,16 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
 .game-container {
+    background: linear-gradient(135deg, #ff9dae, #ffffff);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #ffebee;
-  }
+}
+
   
-  h2 {
-    font-size: 28px;
+h2 {
+    font-size: 28px; /* Keep it readable */
+    font-family: 'Press Start 2P', cursive;
     color: #d81b60;
-  }
+    text-shadow: 4px 4px 0 #ff80ab, 6px 6px 0 #ff4081; /* Cool pixel shadow */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+}
+
+
   
   .game-board {
     display: grid;
@@ -24,18 +36,49 @@
     height: 80px;
     font-size: 30px;
     text-align: center;
-    line-height: 80px;
-    background-color: #f8bbd0;
+    background-color: transparent; /* Make background transparent */
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .card.flipped,
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d; /* Enables 3D flipping */
+    position: relative;
+}
+
+/* Flipped state */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
   .card.matched {
     background-color: #e91e63;
     color: white;
   }
+
+  .card .card-front, .card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back when flipping */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 10px;
+}
+
+/* Card back (question mark side) */
+.card .card-back {
+    background: #f8bbd0;
+    color: #d81b60;
+}
+
+/* Card front (emoji side) */
+.card .card-front {
+    background: #e91e63;
+    color: white;
+    transform: rotateY(180deg); /* Initially hidden */
+}
+
   
   .win-message {
     background-color: white;
@@ -43,4 +86,38 @@
     border-radius: 10px;
     text-align: center;
   }
-  
+
+/*ADDING A BAR FOR THE TIMING - TO MAKE IT LOOK A LIL MORE FUNKY*/
+
+.timer-container {
+    width: 300px;
+    height: 25px;
+    background: #222; /* Dark bar background */
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px auto;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ff4081; /* Neon pink outline */
+}
+
+.timer-bar {
+    height: 100%;
+    background: linear-gradient(to right, #ff4081, #ff80ab);
+    width: 100%;
+    transition: width 1s linear;
+    border-radius: 15px;
+}
+
+.timer-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
