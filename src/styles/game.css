@@ -2,7 +2,7 @@
 
 
 .game-container {
-    background: linear-gradient(135deg, #ff9dae, #ffffff);
+    /* background: linear-gradient(135deg, #ff9dae, #ffffff); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,12 +10,63 @@
     height: 100vh;
 }
 
+body {
+    cursor: url('/images/cbg.png'), auto;
+  }
+  
+body {
+    background: #ffd6e0;
+    overflow: hidden;
+  }
+  
+/* ✨ Sparkle effect */
+.sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, rgb(243, 186, 213), rgba(255, 192, 247, 0.479)); /* Soft pink-white */
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkleFade 0.8s linear;
+  }
+  
+  @keyframes sparkleFade {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+
+  .trail-dot {
+    position: absolute;
+    font-size: 10px; /* Adjust size */
+    color: red; /* Heart color */
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+  }
+  
+  /* Make it slightly float upwards and fade out */
+  @keyframes fadeOut {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
   
 h2 {
     font-size: 28px; /* Keep it readable */
     font-family: 'Press Start 2P', cursive;
     color: #d81b60;
-    text-shadow: 4px 4px 0 #ff80ab, 6px 6px 0 #ff4081; /* Cool pixel shadow */
+    text-shadow: 2px 2px 0 #ff80ab, 5px 5px 0 #ff4081; /* Cool pixel shadow */
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 10px;
@@ -70,7 +121,7 @@ h2 {
 
 /* Front side (Emoji, hidden initially) */
 .card .card-front {
-    background: #e91e63;
+    background: #ff6195;
     color: white;
     transform: rotateY(180deg);
 }
@@ -132,7 +183,7 @@ h2 {
 */
   
   .win-message {
-    background-color: white;
+    background-color: #ffcfcf;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -143,7 +194,7 @@ h2 {
 .timer-container {
     width: 300px;
     height: 25px;
-    background: #222; /* Dark bar background */
+    background: #ffecf2; /* Dark bar background */
     border-radius: 15px;
     overflow: hidden;
     margin: 10px auto;
@@ -163,7 +214,7 @@ h2 {
 .timer-text {
     font-size: 0.8rem;
     font-weight: 500;
-    color: white;
+    color: rgb(255, 255, 255);
     position: absolute;
     width: 100%;
     text-align: center;
@@ -324,3 +375,5 @@ button:focus {
     100% { transform: translate(0); }
 }
 */
+
+
