@@ -120,7 +120,7 @@ export default function MemoryGame() {
                 onClick={() => handleCardClick(c)}
                 >
                 {/* Back side (Hidden when flipped) */}
-                <div className="card-back">❓</div>  
+                <div className="card-back"></div>  
 
                 {/* Front side (Shows emoji when flipped) */}
                 <div className="card-front">{c.emoji}</div>
