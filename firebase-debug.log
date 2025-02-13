@@ -1,0 +1,45 @@
+[debug] [2025-02-12T22:27:19.411Z] ----------------------------------------------------------------------
+[debug] [2025-02-12T22:27:19.415Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Reva Laxmi Chauhan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-02-12T22:27:19.416Z] CLI Version:   13.30.0
+[debug] [2025-02-12T22:27:19.416Z] Platform:      win32
+[debug] [2025-02-12T22:27:19.416Z] Node Version:  v22.13.1
+[debug] [2025-02-12T22:27:19.417Z] Time:          Thu Feb 13 2025 03:57:19 GMT+0530 (India Standard Time)
+[debug] [2025-02-12T22:27:19.417Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-12T22:27:19.426Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-12T22:27:19.427Z] > authorizing via signed-in user (reva.chauhan1@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Reva Laxmi Chauhan\Desktop\valentines-game
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-02-12T22:27:22.734Z] Checked if tokens are valid: true, expires at: 1739402830502
+[debug] [2025-02-12T22:27:22.735Z] Checked if tokens are valid: true, expires at: 1739402830502
+[debug] [2025-02-12T22:27:22.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/availableProjects pageSize=100
+[debug] [2025-02-12T22:27:23.925Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/availableProjects 200
+[debug] [2025-02-12T22:27:23.926Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/availableProjects [omitted]
+[debug] [2025-02-12T22:27:25.588Z] Checked if tokens are valid: true, expires at: 1739402830502
+[debug] [2025-02-12T22:27:25.588Z] Checked if tokens are valid: true, expires at: 1739402830502
+[debug] [2025-02-12T22:27:25.588Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/valentines-450722:addFirebase [none]
+[debug] [2025-02-12T22:27:26.285Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/valentines-450722:addFirebase 403
+[debug] [2025-02-12T22:27:26.287Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/valentines-450722:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-02-12T22:27:26.289Z] Request to https://firebase.googleapis.com/v1beta1/projects/valentines-450722:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2025-02-12T22:27:26.509Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/valentines-450722:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Reva Laxmi Chauhan\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\Reva Laxmi Chauhan\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.

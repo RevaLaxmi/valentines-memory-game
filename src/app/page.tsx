@@ -1,3 +1,4 @@
+/*
 import Link from "next/link";
 import "../styles/globals.css";
 
@@ -10,4 +11,13 @@ export default function Home() {
       </Link>
     </div>
   );
+}
+*/
+
+
+import MemoryGame from "@/components/MemoryGame"; // Ensure the correct import path
+import "@/styles/game.css"; // Import your game styles
+
+export default function Home() {
+  return <MemoryGame />;
 }
