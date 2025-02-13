@@ -4,14 +4,13 @@ import "../styles/home.css";  // ✅ Import the page-specific CSS
 export default function Home() {
   return (
     <div className="home-container">
-      <h1>Galentines Game💖</h1>
+      <h1>Sip, Laugh, Match 🍷💗</h1>
       <Link href="/game">
         <button>Start Game 🎮</button>
       </Link>
     </div>
   );
 }
-
 
 /*
 import Link from "next/link";

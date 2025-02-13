@@ -153,7 +153,7 @@ export default function MemoryGame() {
         </div>
       ) : lost ? (
         <div className="lose-message">
-          <p>😢 Oops! Time’s up!</p>
+          <p>😢 Oops! You lost</p>
           <p>{"Every moment with you is a win for me! 💗"}</p>
         </div>
       ) : (
