@@ -3,7 +3,7 @@
 A fun and adorable memory card game with a **Galentine's Day** twist! Match cute icons, enjoy playful animations, and share the love with your besties. ✨🎀
 
 ## 🌸 Live Demo
-Play it here: **[Galentine's Memory Game]([https://galentines-game.vercel.app/](https://valentines-memory-game.vercel.app/))**
+Play it here: [https://galentines-game.vercel.app/](https://valentines-memory-game.vercel.app/)
 
 ---
 
