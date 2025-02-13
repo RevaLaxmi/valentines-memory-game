@@ -46,17 +46,21 @@ export default function MemoryGame() {
         );
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 1000);
+        setTimeout(() => {
+          resetTurn();
+        }, 1000);
+        
       }
     }
   }, [firstPick, secondPick]);
 
   useEffect(() => {
     if (cards.length > 0 && cards.every((c) => c.matched)) {
-      return setWon(true);
+      setWon(true);
     }
   }, [cards]);  
 
+  /*
   useEffect(() => {
     if (timeLeft > 0 && !won) {
       const timer = setInterval(() => {
@@ -67,6 +71,19 @@ export default function MemoryGame() {
     } 
     
     if (timeLeft === 0) {
+      setLost(true);
+    }
+  }, [timeLeft, won]);
+  */
+
+  useEffect(() => {
+    if (timeLeft > 0 && !won) {
+      const timer = setInterval(() => {
+        setTimeLeft((prevTime) => Math.max(prevTime - 1, 0));
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    } else if (timeLeft === 0) {
       setLost(true);
     }
   }, [timeLeft, won]);
