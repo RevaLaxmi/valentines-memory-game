@@ -52,10 +52,19 @@ export default function MemoryGame() {
   }, [firstPick, secondPick]);
 
   useEffect(() => {
+    if (cards.length > 0 && cards.every((c) => c.matched)) {
+      setWon(true);
+    }
+  }, [cards]);  
+
+  /*
+  useEffect(() => {
     if (cards.every((c) => c.matched) && cards.length > 0) {
       setWon(true);
     }
   }, [cards]);
+  */
+
 
   /*
   useEffect(() => {
@@ -73,7 +82,7 @@ export default function MemoryGame() {
   useEffect(() => {
     if (timeLeft > 0 && !won) {
       const timer = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+        setTimeLeft((prevTime) => Math.max(prevTime - 1,0));
       }, 1000);
       
       return () => clearInterval(timer);
@@ -144,12 +153,12 @@ export default function MemoryGame() {
       {won ? (
         <div className="win-message">
           <p>🎉 You won the game!</p>
-          <p>Lets celebrate, 14th of Feb im taking you out for a date💖</p>
+          <p>{"Lets celebrate, 14th of Feb im taking you out for a date💖"}</p>
         </div>
       ) : lost ? (
         <div className="lose-message">
           <p>😢 Oops! Time’s up!</p>
-          <p>Let me take you out on the 14th for a date? 💞</p>
+          <p>{"Let me take you out on the 14th for a date? 💞"}</p>
         </div>
       ) : (
         <div className="game-board">
