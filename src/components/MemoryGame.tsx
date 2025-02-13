@@ -53,31 +53,9 @@ export default function MemoryGame() {
 
   useEffect(() => {
     if (cards.length > 0 && cards.every((c) => c.matched)) {
-      setWon(true);
+      return setWon(true);
     }
   }, [cards]);  
-
-  /*
-  useEffect(() => {
-    if (cards.every((c) => c.matched) && cards.length > 0) {
-      setWon(true);
-    }
-  }, [cards]);
-  */
-
-
-  /*
-  useEffect(() => {
-    if (timeLeft > 0 && !won) {
-      const timer = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-    } else if (timeLeft === 0) {
-      setLost(true);
-    }
-  }, [timeLeft, won]);
-  */
 
   useEffect(() => {
     if (timeLeft > 0 && !won) {
@@ -122,7 +100,6 @@ export default function MemoryGame() {
     setTimeLeft(30);
   };
 
-  // ✨ Adding the sparkle effect
   useEffect(() => {
     const createSparkle = (e: MouseEvent) => {
       const sparkle = document.createElement("div");
