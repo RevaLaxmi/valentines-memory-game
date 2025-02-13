@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💖 Galentine's Memory Game 💖
 
-## Getting Started
+A fun and adorable memory card game with a **Galentine's Day** twist! Match cute icons, enjoy playful animations, and share the love with your besties. ✨🎀
 
-First, run the development server:
+## 🌸 Live Demo
+Play it here: **[Galentine's Memory Game](https://galentines-game.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🎮 How to Play
+1. Click **Start Game 🎮** on the home screen.
+2. Flip two cards at a time to find a matching pair.
+3. Match all the pairs before time runs out!
+4. Celebrate your win with a **sweet message** or try again if you lose.
+
+---
+
+## ✨ Features
+- **Adorable Galentine’s theme** 💕
+- **Smooth flip animations** ✨
+- **Heartwarming messages** when you win or lose 💌
+- **Mobile-friendly** 📱
+- **Sparkle and heart effects** for an extra magical touch 🌟
+
+---
+
+## 🛠️ Tech Stack
+- **Next.js** (React Framework) ⚛️
+- **CSS Animations** for smooth effects 🎨
+- **Firebase** (optional for hosting or database) 🔥
+- **Vercel** for deployment 🚀
+
+---
+
+## 📂 Project Structure
+```
+📁 src/
+ ├── 📁 app/           # Pages and routing
+ │   ├── 📄 page.tsx   # Home page (Start Screen)
+ │   ├── 📄 game.tsx   # Game Board
+ │   ├── 📄 win.tsx    # Winning screen
+ │   ├── 📄 lose.tsx   # Losing screen
+ │
+ ├── 📁 components/    # Reusable UI Components
+ │
+ ├── 📁 styles/        # Custom CSS files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
+### **1. Clone the Repository**
+```sh
+git clone https://github.com/yourusername/galentines-game.git
+cd galentines-game
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **2. Install Dependencies**
+```sh
+npm install  # or yarn install
+```
 
-## Learn More
+### **3. Run the Development Server**
+```sh
+npm run dev  # or yarn dev
+```
+Visit **`http://localhost:3000`** in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deployment
+This project is **auto-deployed** on [Vercel](https://vercel.com/). If you want to deploy manually:
+```sh
+git push origin main
+```
+Vercel will automatically update your live site!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎀 Credits
+Designed & Developed by **Reva Chauhan** 💖✨
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Enjoy the game and spread the love! 💕
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
