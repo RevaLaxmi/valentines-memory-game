@@ -127,7 +127,7 @@ export default function MemoryGame() {
       {won ? (
         <div className="win-message">
           <p>🎉 You won the game!</p>
-          <p>Let's celebrate, 14th of Feb i'm taking you out for a date💖</p>
+          <p>Lets celebrate, 14th of Feb im taking you out for a date💖</p>
         </div>
       ) : lost ? (
         <div className="lose-message">
