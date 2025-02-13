@@ -1,0 +1,39 @@
+/* src/styles/home.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: #ffd6e0; /* Soft pink */
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #d81b60;
+    text-shadow: 2px 2px 0 #ff80ab, 4px 4px 0 #ff4081;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #d81b60;
+    transform: scale(1.05);
+}

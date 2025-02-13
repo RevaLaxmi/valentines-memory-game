@@ -1,4 +1,18 @@
+import Link from "next/link";
+import "../styles/home.css";  // ✅ Import the page-specific CSS
 
+export default function Home() {
+  return (
+    <div className="home-container">
+      <h1>Valentines Memory Game</h1>
+      <Link href="/game">
+        <button>Start Game 🎮</button>
+      </Link>
+    </div>
+  );
+}
+
+/*
 import Link from "next/link";
 import "../styles/globals.css";
 
@@ -12,6 +26,7 @@ export default function Home() {
     </div>
   );
 }
+*/
 
 
 /*
