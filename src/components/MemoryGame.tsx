@@ -149,12 +149,12 @@ export default function MemoryGame() {
       {won ? (
         <div className="win-message">
           <p>🎉 You won the game!</p>
-          <p>{"Lets celebrate, 14th of Feb im taking you out for a date💖"}</p>
+          <p>{"Youre the sweetest part of Galentines! 💗"}</p>
         </div>
       ) : lost ? (
         <div className="lose-message">
           <p>😢 Oops! Time’s up!</p>
-          <p>{"Let me take you out on the 14th for a date? 💞"}</p>
+          <p>{"Every moment with you is a win for me! 💗"}</p>
         </div>
       ) : (
         <div className="game-board">
