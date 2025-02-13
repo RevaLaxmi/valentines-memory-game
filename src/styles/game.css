@@ -10,6 +10,13 @@
     height: 100vh;
 }
 
+@media (max-height: 700px) { /* Adjust height limit based on your phone */
+  .game-container {
+    margin-top: -50px; /* Moves everything up */
+  }
+}
+
+
 body {
     cursor: url('/images/cbg.png'), auto;
   }
