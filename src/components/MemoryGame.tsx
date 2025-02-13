@@ -57,6 +57,7 @@ export default function MemoryGame() {
     }
   }, [cards]);
 
+  /*
   useEffect(() => {
     if (timeLeft > 0 && !won) {
       const timer = setInterval(() => {
@@ -67,6 +68,22 @@ export default function MemoryGame() {
       setLost(true);
     }
   }, [timeLeft, won]);
+  */
+
+  useEffect(() => {
+    if (timeLeft > 0 && !won) {
+      const timer = setInterval(() => {
+        setTimeLeft((prevTime) => prevTime - 1);
+      }, 1000);
+      
+      return () => clearInterval(timer);
+    } 
+    
+    if (timeLeft === 0) {
+      setLost(true);
+    }
+  }, [timeLeft, won]);
+  
 
   const handleCardClick = (clickedCard: Card): void => {
     if (!disabled && !clickedCard.flipped && !clickedCard.matched) {
